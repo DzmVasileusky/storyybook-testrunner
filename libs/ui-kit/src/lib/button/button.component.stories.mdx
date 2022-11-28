@@ -1,0 +1,27 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import { moduleMetadata } from '@storybook/angular';
+import { ComponentsModule } from '../components/components.module';
+
+<Meta
+    decorators={[
+        moduleMetadata({
+            imports: [ComponentsModule]
+        })
+    ]}
+    title="Components/Button"
+/>
+
+export const ButtonTemplate = (args) => {
+    return {
+        props: args,
+        template: `<storybook-interactions-button></storybook-interactions-button>`
+    };
+};
+
+# Button
+
+Blablabla
+
+<Canvas>
+    <Story name="Regular">{ButtonTemplate.bind({})}</Story>
+</Canvas>
