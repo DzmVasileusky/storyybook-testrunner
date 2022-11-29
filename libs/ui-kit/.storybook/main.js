@@ -9,6 +9,7 @@ module.exports = {
     ...rootMain.stories,
     '../**/*.stories.mdx',
     '../**/*.stories.@(js|jsx|ts|tsx)',
+    '../src/lib/button/button.component.stories.mdx'
   ],
   addons: [...rootMain.addons, '@storybook/addon-interactions'],
     features: {
