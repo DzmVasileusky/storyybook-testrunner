@@ -1,4 +1,4 @@
-export const parameters = {
-    actions: { disable: true },
-    viewMode: 'docs'
-};
+// export const parameters = {
+//     actions: { disable: true },
+//     viewMode: 'docs'
+// };
