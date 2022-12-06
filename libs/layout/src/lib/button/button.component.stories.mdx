@@ -1,0 +1,37 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import { moduleMetadata } from '@storybook/angular';
+import { expect } from '@storybook/jest';
+import { userEvent, within } from '@storybook/testing-library';
+import { ComponentsModule } from '../components/components.module';
+
+<Meta
+    decorators={[
+        moduleMetadata({
+            imports: [ComponentsModule]
+        })
+    ]}
+    title="Components/Button"
+/>
+
+export const ButtonTemplate = (args) => {
+    return {
+        props: args,
+        template: `<storybook-interactions-button>Button</storybook-interactions-button>`
+    };
+};
+
+# Button
+
+Blablabla
+
+<Canvas>
+    <Story
+        name="Regular"
+        play={async ({ canvasElement }) => {
+            const canvas = within(canvasElement);
+            const button = canvas.getByText('Button');
+            await userEvent.click(button);
+            await expect(canvas.getByText('Popup')).toBeInTheDocument();
+        }}
+    >{ButtonTemplate.bind({})}</Story>
+</Canvas>
